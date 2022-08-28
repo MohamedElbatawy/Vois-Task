@@ -22,32 +22,23 @@ public class TestBase {
 	protected ProductDetails productDetailsObject;
 	protected CardDetails cardDetailsObject;
 	private String amazonURL=Loadproperties.userData.getProperty("amazonURL");
-	private String ksrtcURL=Loadproperties.userData.getProperty("ksrtcURL");
 	static String url;
-	
-	 /*@DataProvider(name = "url")
-	    public Object[][] dataProviderMethod() {
-	        return new Object[][] { { amazonURL }, { ksrtcURL } };
-	    }*/
-	
+
+//Method to Launch chrome browser	
 	@BeforeTest
-	//@Parameters({"url"})
 	public void launchBrowser() {
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 		driver=new ChromeDriver();
 		
-	
 		driver.get(amazonURL);
 	
 		driver.manage().window().setSize(new Dimension(1024, 768));
 		
-		//homePageObject=new AmazonHomePage(driver);
-		//itemScreenObject=new ItemsScreen(driver);
-		//productDetailsObject=new ProductDetails(driver);
-		//cardDetailsObject=new CardDetails(driver);
+	
 		
 	}
 	
+	//Intialize th instance of classes object
 	@BeforeTest
 	public void intalizeClassesObject() {
 		homePageObject=new AmazonHomePage(driver);
@@ -56,17 +47,12 @@ public class TestBase {
 		cardDetailsObject=new CardDetails(driver);
 	}
 	
-	/*@AfterTest
+	//Method to close the browser after test
+	@AfterTest
 	public void closeBrowser() {
 		driver.quit();
-	}*/
+	}
 	
 	
-	/*public static void main(String arg[]) {
-		TestBase testBase=new TestBase();
-		testBase.launchBrowser();
-		//testBase.closeBrowser();
-		
-	}*/
-
+	
 }
