@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AmzonTestSuite]" guice-stage="DEVELOPMENT">
+  <parameter name="url" value="https://www.amazon.com/"/>
+  <test thread-count="5" name="amazonTest(failed)">
+    <classes>
+      <class name="testCase.Scenario1">
+        <methods>
+          <include name="SearchByKey"/>
+          <include name="launchBrowser"/>
+          <include name="ClicOnAddToCrdButton"/>
+          <include name="intalizeClassesObject"/>
+          <include name="assertAddedProdctMessage"/>
+          <include name="firstElementsSelection"/>
+        </methods>
+      </class> <!-- testCase.Scenario1 -->
+    </classes>
+  </test> <!-- amazonTest(failed) -->
+</suite> <!-- Failed suite [AmzonTestSuite] -->
